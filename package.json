@@ -1,0 +1,1 @@
+{"name":"hc-interior","private":true,"type":"module","scripts":{"dev":"vite","build":"vite build","preview":"vite preview"},"devDependencies":{"vite":"^8.3.4"},"dependencies":{"@fontsource/big-shoulders-display":"^5.3.0","@fontsource/hanken-grotesk":"^5.3.0","gsap":"^3.15.0","three":"^0.170.0"}}

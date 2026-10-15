@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All products | HC Interior</title>
+  <meta name="description" content="Every HC Interior product by collection: homes, offices, walls and ceilings, blinds, exterior, and healthcare.">
+  <meta name="theme-color" content="#efeae1">
+  <link rel="icon" href="/img/logo.webp">
+  <script type="module" src="/src/products.js"></script>
+</head>
+<body data-page="products">
+
+  <main class="page">
+    <section class="p-head" aria-labelledby="pH">
+      <p class="eyebrow"><a href="/">Home</a> / Products</p>
+      <h1 id="pH">All products</h1>
+      <p class="p-sub"><span id="pCount"></span> across eight collections. Add what you want priced to your enquiry list.</p>
+      <div class="p-tools">
+        <label class="search"><span class="sr">Search products</span><input id="q" type="search" placeholder="Search products, e.g. blind, floor, door" autocomplete="off"></label>
+        <div class="ctl" role="group" aria-label="View"><span class="ctl-l">View</span>
+          <button type="button" class="ctl-b on" data-view="grid" aria-pressed="true">Grid</button><button type="button" class="ctl-b" data-view="list" aria-pressed="false">List</button></div>
+        <div class="ctl" role="group" aria-label="Sort"><span class="ctl-l">Sort</span>
+          <button type="button" class="ctl-b on" data-sort="coll" aria-pressed="true">Collection</button><button type="button" class="ctl-b" data-sort="name" aria-pressed="false">Name</button></div>
+      </div>
+      <nav class="chips" id="chips" aria-label="Collections"></nav>
+    </section>
+    <div id="list"></div>
+    <p class="p-empty" id="pEmpty" hidden>No products match that search. <button type="button" id="pClear" class="add">Clear search</button></p>
+    <div class="all-cta"><a class="btn btn-solid" data-wa href="#" target="_blank" rel="noopener">Request a quote on WhatsApp</a></div>
+  </main>
+
+
+</body>
+</html>
