@@ -620,13 +620,6 @@ h1, h2, h3, h4 { font-family: var(--body); text-transform: none; font-weight: 40
 .strip dd { font-weight: 400; }
 .hero-side p, .hero h1, .strip { text-shadow: 0 1px 18px rgba(20, 18, 16, 0.55); }
 
-/* sliding gallery: a looping track of photos with stepped heights, bottom-aligned */
-.strip-photos { margin-top: 64px; overflow: hidden; background: var(--paper); }
-.sp-track { display: flex; align-items: flex-end; width: max-content; animation: slide 60s linear infinite; }
-.strip-photos:hover .sp-track { animation-play-state: paused; }
-.sp-track img { flex: none; width: 20vw; object-fit: cover; border-radius: 3px 3px 0 0; margin-right: 2px; }
-.sp-track img:nth-child(8n+1) { height: 300px; } .sp-track img:nth-child(8n+2) { height: 380px; } .sp-track img:nth-child(8n+3) { height: 460px; } .sp-track img:nth-child(8n+4) { height: 540px; }
-.sp-track img:nth-child(8n+5) { height: 620px; } .sp-track img:nth-child(8n+6) { height: 540px; } .sp-track img:nth-child(8n+7) { height: 460px; } .sp-track img:nth-child(8n) { height: 380px; }
-@keyframes slide { to { transform: translateX(-50%); } }
-@media (max-width: 900px) { .sp-track img { width: 46vw; } .sp-track img:nth-child(n) { height: 320px; } .sp-track img:nth-child(2n) { height: 420px; } }
-@media (prefers-reduced-motion: reduce) { .sp-track { animation: none !important; overflow-x: auto; } .strip-photos { overflow-x: auto; } }
+/* sliding gallery: cards are positioned and scaled by src/gallery.js */
+.strip-photos { position: relative; margin-top: 64px; height: clamp(420px, 78svh, 720px); overflow: hidden; background: var(--paper); }
+.strip-photos img { position: absolute; left: 0; bottom: 0; transform-origin: 0 100%; object-fit: cover; border-radius: 3px 3px 0 0; will-change: transform; }

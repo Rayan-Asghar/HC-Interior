@@ -4,6 +4,7 @@ import { mountHero } from './hero.js'
 import { mountCollectionScroll } from './cscroll.js'
 import { renderRows } from './rows.js'
 import { initMotion } from './motion.js'
+import { mountGallery } from './gallery.js'
 
 mountHero({ onEnquire: enquireFromFilm })
 // Home shows the priority collection (Sound Proofing) and the main audiences; the Collections page shows all eight
@@ -22,8 +23,7 @@ acc.addEventListener('click', (e) => {
   $$('li', acc).forEach((x) => { const on = x === li; x.classList.toggle('on', on); $('button', x).setAttribute('aria-expanded', String(on)) })
   accImg.src = `/img/${li.dataset.img}.webp`
 })
-// sliding gallery: the set is repeated once so the track loops without a jump
-const spTrack = $('#spTrack'); spTrack.append(...$$('img', spTrack).map((i) => i.cloneNode()))
+mountGallery($('#gallery'))
 const host = $('#homeColl')
 if (new URLSearchParams(location.search).get('collections') === 'scroll') {
   // the earlier pinned-title scroll, kept reachable at /?collections=scroll
