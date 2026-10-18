@@ -5,6 +5,7 @@ import { mountCollectionScroll } from './cscroll.js'
 import { renderRows } from './rows.js'
 import { initMotion } from './motion.js'
 import { mountGallery } from './gallery.js'
+import { mountSound } from './sound.js'
 
 mountHero({ onEnquire: enquireFromFilm })
 // Home shows the priority collection (Sound Proofing) and the main audiences; the Collections page shows all eight
@@ -15,7 +16,7 @@ const PJ = [
   ['theatre', 'Healthcare: Theatre & Critical Care', 'Hospitals', 'stock/ot-wide', 'Modular operating theatres, hermetic doors, ceilings and medical panels built for clean air.'],
 ]
 const pj = $('#pjList')
-pj.innerHTML = PJ.map(([id, name, tag, img, line]) => `<a class="pj" href="/collections.html#rail-${id}"><img src="/img/${img}.webp" alt="" loading="lazy"><div><span class="chip">${tag}</span><h3>${name}</h3><p>${line}</p></div></a>`).join('')
+pj.innerHTML = PJ.map(([id, name, tag, img, line]) => `<a class="pj" href="/collections.html#rail-${id}"><img src="/img/${img}.webp" alt="" loading="lazy" decoding="async" width="483" height="322"><div><span class="chip">${tag}</span><h3>${name}</h3><p>${line}</p></div></a>`).join('')
 // accordion: one service open at a time, its photo crossfades in
 const acc = $('#bestAcc'), accImgs = $$('#bestImg img'), tag = $('#bestTag')
 acc.addEventListener('click', (e) => {
@@ -26,6 +27,7 @@ acc.addEventListener('click', (e) => {
   tag.innerHTML = `<b>0${k + 1}</b> ${$('button span', lis[k]).textContent}`
 })
 mountGallery($('#gallery'))
+mountSound($('#sound'))
 const host = $('#homeColl')
 if (new URLSearchParams(location.search).get('collections') === 'scroll') {
   // the earlier pinned-title scroll, kept reachable at /?collections=scroll

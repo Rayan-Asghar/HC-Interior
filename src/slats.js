@@ -104,7 +104,7 @@ function buildGeometry(n, spacing, H) {
 // opts: { canvas, images:[url,url,url], reduced, onStep(faceIndex) }
 export function mountSlats({ canvas, images, reduced, onStep }) {
   const renderer = new WebGLRenderer({ canvas, antialias: true, alpha: false })
-  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.75))
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, matchMedia('(max-width: 900px)').matches ? 1.25 : 1.75))
   renderer.setClearColor(0x1f1d1b)
   const scene = new Scene()
   const FOV = 28, VIEW_H = 10

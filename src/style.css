@@ -652,3 +652,68 @@ h1, h2, h3, h4 { font-family: var(--body); text-transform: none; font-weight: 40
 .best-side { display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
 .best-note { margin: 0; max-width: 26ch; font: 400 1.25rem/1.3 var(--body); letter-spacing: -0.02em; color: var(--charcoal); }
 .best-acc { align-self: stretch; }
+
+/* ---- sound proofing film: pinned stage, canvas scrubbed by scroll ---- */
+.snd { background: var(--ink); color: var(--paper); }
+.snd-track { height: 320svh; position: relative; }
+.snd-stage { position: sticky; top: 0; height: 100svh; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: clamp(24px, 4vw, 64px); padding: var(--head) var(--gutter) 0; }
+.snd-copy { display: grid; gap: 28px; align-content: center; }
+.snd-copy h2 { font-size: clamp(2.4rem, 4.4vw, 4.2rem); font-weight: 400; }
+.snd-lines { display: grid; }
+.snd-lines p { grid-area: 1 / 1; margin: 0; max-width: 34ch; font-size: clamp(1.0625rem, 1.5vw, 1.25rem); line-height: 1.45; color: rgba(245, 240, 232, 0.78); opacity: 0; transform: translateY(14px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.snd-lines p.on { opacity: 1; transform: none; }
+.snd-lines b { display: block; margin-bottom: 6px; font-weight: 400; font-size: clamp(1.4rem, 2.2vw, 1.9rem); letter-spacing: -0.025em; color: var(--paper); }
+.snd-acts { display: flex; flex-wrap: wrap; gap: 10px; }
+.snd-prog { display: flex; gap: 6px; }
+.snd-prog i { width: 36px; height: 2px; background: rgba(245, 240, 232, 0.22); transition: background 0.5s var(--ease); }
+.snd-prog i.on { background: var(--bronze-lt); }
+.snd-cv { width: 100%; height: min(70svh, 620px); display: block; border-top: 1px solid rgba(245, 240, 232, 0.14); border-bottom: 1px solid rgba(245, 240, 232, 0.14); }
+/* reduced motion: no pin, all three lines stacked */
+[data-motion='reduced'] .snd-track { height: auto; }
+[data-motion='reduced'] .snd-stage { position: static; height: auto; padding-block: calc(var(--head) + 24px) 64px; }
+[data-motion='reduced'] .snd-lines { gap: 18px; }
+[data-motion='reduced'] .snd-lines p { grid-area: auto; opacity: 1; transform: none; }
+[data-motion='reduced'] .snd-prog { display: none; }
+@media (max-width: 900px) {
+  .snd-track { height: 280svh; }
+  .snd-stage { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr); align-items: start; gap: 18px; padding-top: calc(var(--head) + 8px); padding-bottom: 20px; }
+  .snd-copy { gap: 14px; }
+  .snd-copy h2 { font-size: 2rem; }
+  .snd-lines p { font-size: 1rem; max-width: none; }
+  .snd-lines b { font-size: 1.3rem; }
+  .snd-cv { height: 100%; min-height: 0; }
+  .snd-acts .btn-ghost { display: none; }
+  [data-motion='reduced'] .snd-cv { height: 320px; }
+}
+
+/* ---- speed and small screens ---- */
+/* paint work for below-the-fold sections is skipped until they near the viewport */
+.best, .belief, .projects, .faq, .cta, .foot { content-visibility: auto; contain-intrinsic-size: auto 800px; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+img { height: auto; }
+.strip-photos img, .best-img img, .belief > img, .cta > img { height: 100%; }
+.pj img { height: auto; }
+@media (hover: none) { .best-acc li:not(.on) button:hover { padding-left: 0; } .menu a:hover { text-decoration: none; } }
+@media (max-width: 900px) {
+  .strip { font-size: 0.9375rem; }
+  .belief h2 { font-size: 2rem; }
+  .belief .bd { font-size: 1.6rem; }
+  .intro h2 { font-size: 1.6rem; }
+  .foot-name { font-size: 19.5vw !important; }
+  .foot-base { flex-direction: column; gap: 6px; }
+  .cta-card { padding: 24px; }
+  .btn { min-height: 44px; }
+}
+@media (max-width: 480px) {
+  :root { --gutter: 18px; }
+  .hero h1 { font-size: clamp(2.4rem, 13vw, 3.2rem); }
+  .faq summary { font-size: 1.0625rem; }
+}
+@media (max-width: 900px) {
+  /* facts strip flows under the paragraph instead of pinning to the hero floor */
+  .strip { position: static; margin-top: 32px; }
+  .hero-copy.over { padding-bottom: 0; height: auto; }
+  .reel-ui { bottom: 28px; }
+  .hero-reel { min-height: 100svh; padding-bottom: 96px; }
+}
+@media (max-width: 900px) { .hero .acts .slat-go { display: inline-block; } }

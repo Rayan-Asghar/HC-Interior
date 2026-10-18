@@ -7,6 +7,7 @@
   <meta name="description" content="HC Interior: floors, walls, ceilings, kitchens, blinds, facades and healthcare interiors for homes, offices and hospitals in Islamabad.">
   <meta name="theme-color" content="#efeae1">
   <link rel="icon" href="/img/logo.webp">
+  <link rel="preload" as="image" href="/img/stock/hero-homes.webp" fetchpriority="high">
   <script type="module" src="/src/main.js"></script>
 </head>
 <body data-page="home">
@@ -22,7 +23,7 @@
         <div><dt>3</dt><dd>Sectors served</dd></div>
       </dl>
     </section>
-    <div class="strip-photos" id="gallery" aria-hidden="true"><img src="/img/stock/room-wood-slats.webp" alt=""><img src="/img/stock/kitchen-light.webp" alt=""><img src="/img/stock/wardrobe-walk-in.webp" alt=""><img src="/img/stock/room-warm-lights.webp" alt=""><img src="/img/stock/curtains-sheer.webp" alt=""><img src="/img/stock/office-wood-floor.webp" alt=""><img src="/img/stock/floor-room.webp" alt=""><img src="/img/stock/hero-homes.webp" alt=""></div>
+    <div class="strip-photos" id="gallery" aria-hidden="true"><img src="/img/stock/room-wood-slats.webp" alt="" decoding="async" width="400" height="656"><img src="/img/stock/kitchen-light.webp" alt="" decoding="async" width="400" height="656"><img src="/img/stock/wardrobe-walk-in.webp" alt="" decoding="async" width="400" height="656"><img src="/img/stock/room-warm-lights.webp" alt="" decoding="async" width="400" height="656"><img src="/img/stock/curtains-sheer.webp" alt="" decoding="async" width="400" height="656"><img src="/img/stock/office-wood-floor.webp" alt="" decoding="async" width="400" height="656"><img src="/img/stock/floor-room.webp" alt="" decoding="async" width="400" height="656"><img src="/img/stock/hero-homes.webp" alt="" decoding="async" width="400" height="656"></div>
     <section class="best" aria-labelledby="bsH">
       <h2 id="bsH">What we do best</h2>
       <div class="best-grid">
@@ -31,7 +32,7 @@
       </div>
     </section>
     <section class="belief" aria-label="Our belief">
-      <img src="/img/stock/room-warm-lights.webp" alt="">
+      <img src="/img/stock/room-warm-lights.webp" alt="" loading="lazy" decoding="async">
       <h2>Our belief</h2>
       <blockquote><p>A good room doesn't happen by accident. It happens through listening, understanding, and choosing the right materials, each one quietly working together until the space finally feels right.</p><footer>HC Interior</footer></blockquote>
       <h2 class="bd">By material</h2>
@@ -40,6 +41,23 @@
       <h2 id="pjH">This is what we supply</h2>
       <div class="pj-wrap"><p class="lbl">Collections</p><div class="pj-list" id="pjList"></div></div>
       <div class="pj-more"><a class="btn btn-line" href="/collections.html">All collections <span aria-hidden="true">↗</span></a><a class="btn btn-line" href="/products.html">Browse every product <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <section class="snd" id="sound" aria-labelledby="sndH">
+      <div class="snd-track">
+        <div class="snd-stage">
+          <div class="snd-copy">
+            <h2 id="sndH">Sound Proofing</h2>
+            <div class="snd-lines">
+              <p class="on"><b>Noise bounces.</b> Hard, bare walls throw sound straight back into the room.</p>
+              <p><b>Slats take it in.</b> Acoustic slats, boards and linings absorb sound instead of returning it.</p>
+              <p><b>Rooms keep their noise.</b> Treatment and partitions for rooms that need to stay quiet.</p>
+            </div>
+            <div class="snd-acts"><a class="btn btn-solid" href="/products.html#sound">See sound proofing <span aria-hidden="true">↗</span></a><a class="btn btn-ghost" data-wa href="#" target="_blank" rel="noopener">Request a quote <span aria-hidden="true">↗</span></a></div>
+            <div class="snd-prog" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+          </div>
+          <canvas class="snd-cv" role="img" aria-label="Animation: sound waves bounce off a bare wall as an echo, then acoustic slats rise across the wall and absorb the sound"></canvas>
+        </div>
+      </div>
     </section>
     <section class="faq" aria-labelledby="fqH">
       <div class="faq-l"><h2 id="fqH">Questions worth asking</h2>
@@ -54,7 +72,7 @@
       </div>
     </section>
     <section class="cta" id="contact" aria-labelledby="clH">
-      <img src="/img/stock/floor-room.webp" alt="">
+      <img src="/img/stock/floor-room.webp" alt="" loading="lazy" decoding="async">
       <div class="cta-card">
         <h2 id="clH">Build your dream space with us</h2>
         <p>HC Interior supplies and fits floors, walls, ceilings, kitchens, blinds, facades and healthcare interiors, shaped around how you live, work and heal.</p>
