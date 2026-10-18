@@ -16,12 +16,14 @@ const PJ = [
 ]
 const pj = $('#pjList')
 pj.innerHTML = PJ.map(([id, name, tag, img, line]) => `<a class="pj" href="/collections.html#rail-${id}"><img src="/img/${img}.webp" alt="" loading="lazy"><div><span class="chip">${tag}</span><h3>${name}</h3><p>${line}</p></div></a>`).join('')
-// accordion: one service open at a time, its photo swaps in
-const acc = $('#bestAcc'), accImg = $('#bestImg img')
+// accordion: one service open at a time, its photo crossfades in
+const acc = $('#bestAcc'), accImgs = $$('#bestImg img'), tag = $('#bestTag')
 acc.addEventListener('click', (e) => {
-  const li = e.target.closest('li'); if (!li || !e.target.closest('button')) return
-  $$('li', acc).forEach((x) => { const on = x === li; x.classList.toggle('on', on); $('button', x).setAttribute('aria-expanded', String(on)) })
-  accImg.src = `/img/${li.dataset.img}.webp`
+  const btn = e.target.closest('button'); if (!btn) return
+  const lis = $$('li', acc), k = lis.indexOf(btn.closest('li'))
+  lis.forEach((x, j) => { x.classList.toggle('on', j === k); $('button', x).setAttribute('aria-expanded', String(j === k)) })
+  accImgs.forEach((im, j) => im.classList.toggle('on', j === k))
+  tag.innerHTML = `<b>0${k + 1}</b> ${$('button span', lis[k]).textContent}`
 })
 mountGallery($('#gallery'))
 const host = $('#homeColl')
