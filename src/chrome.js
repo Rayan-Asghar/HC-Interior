@@ -1,3 +1,4 @@
+import { CONTACT } from './data.js'
 // Header, footer, quick-view dialog and enquiry drawer, injected on every page so the
 // five pages share one definition. <body data-page="home|collections|products|about|contact">
 const page = document.body.dataset.page || ''
@@ -5,14 +6,18 @@ const NAV = [['/collections.html', 'Collections', 'collections'], ['/products.ht
 
 const skip = `<a class="skip" href="#main">Skip to content</a>`
 const header = `<header class="top" id="top">
-  <a class="brand" href="/" aria-label="HC Interior, home"><img src="/img/logo.webp" alt="HC Interior, Design Beyond Ordinary" width="56" height="65"></a>
-  <nav class="menu" id="menu" aria-label="Primary">${NAV.map(([h, l, k]) => `<a href="${h}"${page === k ? ' aria-current="page"' : ''}>${l}</a>`).join('')}</nav>
+  <a class="brand" href="/" aria-label="HC Interior, home">HC Interior</a>
+  <nav class="menu" id="menu" aria-label="Primary">${NAV.map(([h, l, k]) => `<a href="${h}"${page === k ? ' aria-current="page"' : ''}>${l}</a>`).join('')}<button class="enq-btn" id="enqOpen" type="button" aria-controls="enq" aria-expanded="false">Enquiry list <b id="enqCount">0</b></button></nav>
   <button class="menu-btn" id="menuBtn" type="button" aria-controls="menu" aria-expanded="false"><span class="sr">Menu</span><i></i><i></i></button>
-  <button class="enq-btn" id="enqOpen" type="button" aria-controls="enq" aria-expanded="false">Enquiry list <b id="enqCount">0</b></button>
 </header>`
 const footer = `<footer class="foot">
-  <p class="foot-name">HC Interior</p><p>Design Beyond Ordinary</p>
-  <nav aria-label="Footer"><a href="/">Home</a>${NAV.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</nav>
+  <div class="foot-cols">
+    <div><h3>Sitemap</h3><nav aria-label="Footer"><a href="/">Home</a>${NAV.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</nav></div>
+    <div><h3>Visit</h3><p>${CONTACT.address}</p></div>
+    <div><h3>Work with us</h3><p><a href="mailto:${CONTACT.email}">${CONTACT.email}</a></p><p><a href="tel:${CONTACT.phone.replace(/-/g, '')}">${CONTACT.phone}</a></p></div>
+  </div>
+  <p class="foot-name" aria-hidden="true">HC Interior</p>
+  <div class="foot-base"><span>Design Beyond Ordinary</span><span>© ${new Date().getFullYear()} HC Interior</span></div>
 </footer>`
 const overlays = `<dialog id="qv" aria-labelledby="qvName">
   <button class="qv-x" id="qvClose" type="button" aria-label="Close">×</button>

@@ -12,35 +12,45 @@
 <body data-page="home">
   <main>
     <div id="heroHost"></div>
-    <section class="cscroll" id="collections" aria-label="Collections"></section>
-    <div class="all-cta"><a class="btn btn-solid" href="/collections.html">All eight collections</a><a class="btn btn-line" href="/products.html">Browse every product</a></div>
+    <div id="homeColl" hidden></div>
     <section class="intro" id="about" aria-labelledby="inH">
-      <p class="eyebrow">About HC Interior</p>
-      <h2 id="inH">We supply and fit the surfaces that make a space feel finished.</h2>
-      <div class="intro-grid">
-        <p>HC Interior brings floors, walls, ceilings, kitchens, blinds, facades and healthcare interiors under one roof. We listen to how a room will be used, then recommend what will last.</p>
-        <p>We keep selected products in stock and source and import the rest to your brand and project requirements, delivered to your door. <a href="/about.html">About the company →</a></p>
-      </div>
+      <p class="lbl">Introduction</p>
+      <h2 id="inH">We're not just suppliers. We listen to the room, recommend what will last, and fit it properly. Every project starts the same way: tell us the space, and we bring the samples.</h2>
       <dl class="stats">
         <div><dt>8</dt><dd>Collections</dd></div>
         <div><dt>40+</dt><dd>Product lines</dd></div>
-        <div><dt>3</dt><dd>Sectors: homes, offices, hospitals</dd></div>
+        <div><dt>3</dt><dd>Sectors served</dd></div>
       </dl>
     </section>
+    <div class="strip-photos" aria-hidden="true">
+      <img src="/img/stock/room-wood-slats.webp" alt="" loading="lazy"><img src="/img/stock/kitchen-light.webp" alt="" loading="lazy"><img src="/img/stock/wardrobe-walk-in.webp" alt="" loading="lazy"><img src="/img/stock/room-warm-lights.webp" alt="" loading="lazy"><img src="/img/stock/curtains-sheer.webp" alt="" loading="lazy"><img src="/img/stock/office-wood-floor.webp" alt="" loading="lazy">
+    </div>
     <section class="best" aria-labelledby="bsH">
       <h2 id="bsH">What we do best</h2>
-      <ol class="best-list">
-        <li><b>Homes</b><span>Kitchens, wardrobes, floors, blinds and wall finishes for houses and apartments.</span><a href="/collections.html#rail-home" aria-label="Home collections">→</a></li>
-        <li><b>Offices</b><span>Partitions, acoustic treatment, raised floors and ceilings for working floors.</span><a href="/collections.html#rail-office" aria-label="Office collections">→</a></li>
-        <li><b>Hospitals</b><span>Operation theatres, hermetic doors, hygienic floors, handrails and medical panels.</span><a href="/collections.html#rail-theatre" aria-label="Healthcare collections">→</a></li>
-        <li><b>Exteriors</b><span>ACP facades, decking, artificial grass and gym surfaces that face the weather.</span><a href="/collections.html#rail-outdoor" aria-label="Exterior collections">→</a></li>
-      </ol>
+      <div class="best-grid">
+        <div class="best-img" id="bestImg"><img src="/img/stock/hero-homes.webp" alt=""></div>
+        <ul class="best-acc" id="bestAcc">
+          <li class="on" data-img="stock/hero-homes"><button type="button" aria-expanded="true">Homes</button><p>Kitchens, wardrobes, floors, blinds and wall finishes for houses and apartments, planned around how the rooms are used.</p></li>
+          <li data-img="stock/hero-offices"><button type="button" aria-expanded="false">Offices</button><p>Partitions, acoustic treatment, raised floors and ceilings for working floors.</p></li>
+          <li data-img="stock/hero-hospitals"><button type="button" aria-expanded="false">Hospitals</button><p>Operation theatres, hermetic doors, hygienic floors, handrails and medical panels.</p></li>
+          <li data-img="stock/facade"><button type="button" aria-expanded="false">Exteriors</button><p>ACP facades, decking, artificial grass and gym surfaces that face the weather.</p></li>
+        </ul>
+      </div>
     </section>
     <section class="belief" aria-label="Our belief">
-      <p>A good room is decided by what it is made of. We help you choose materials that suit the space, the budget and the years ahead.</p>
+      <img src="/img/stock/room-warm-lights.webp" alt="">
+      <h2>Our belief</h2>
+      <blockquote><p>A good room doesn't happen by accident. It happens through listening, understanding, and choosing the right materials, each one quietly working together until the space finally feels right.</p><footer>HC Interior</footer></blockquote>
+      <h2 class="bd">By material</h2>
+    </section>
+    <section class="projects" id="collections" aria-labelledby="pjH">
+      <h2 id="pjH">This is what we supply</h2>
+      <div class="pj-wrap"><p class="lbl">Collections</p><div class="pj-list" id="pjList"></div></div>
+      <div class="pj-more"><a class="btn btn-line" href="/collections.html">All eight collections <span aria-hidden="true">↗</span></a><a class="btn btn-line" href="/products.html">Browse every product <span aria-hidden="true">↗</span></a></div>
     </section>
     <section class="faq" aria-labelledby="fqH">
-      <div class="faq-head"><h2 id="fqH">Questions worth asking</h2><a class="btn btn-line" href="/contact.html">Let's talk</a></div>
+      <div class="faq-l"><h2 id="fqH">Questions worth asking</h2>
+        <div class="faq-card"><p>Still have questions? Tell us about the room and we'll answer them in person.</p><a class="btn btn-line" href="/contact.html">Let's talk <span aria-hidden="true">↗</span></a></div></div>
       <div class="faq-list">
         <details><summary>Do you supply only, or supply and fit?</summary><p>Both. We can supply products on their own, or supply and install them. Tell us which you need when you enquire.</p></details>
         <details><summary>Can you source something that is not in the catalogue?</summary><p>Yes. We keep selected products in stock and also source and import to your brand and project requirements.</p></details>
@@ -50,15 +60,12 @@
         <details><summary>Where are you based?</summary><p>Our showroom is in Islamabad, and we work with homes, offices and hospitals in the surrounding region.</p></details>
       </div>
     </section>
-    <section class="close" id="contact" aria-labelledby="clH">
-      <div class="bands" id="closeBands" aria-hidden="true"></div>
-      <div class="close-copy">
-        <h2 id="clH">Tell us the room.<br>We will bring the samples.</h2>
-        <div class="close-actions">
-          <a class="btn btn-solid" data-wa href="#" target="_blank" rel="noopener">Request a quote on WhatsApp</a>
-          <a class="btn btn-line" href="/contact.html">Contact us</a>
-        </div>
-        
+    <section class="cta" id="contact" aria-labelledby="clH">
+      <img src="/img/stock/floor-room.webp" alt="">
+      <div class="cta-card">
+        <h2 id="clH">Build your dream space with us</h2>
+        <p>HC Interior supplies and fits floors, walls, ceilings, kitchens, blinds, facades and healthcare interiors, shaped around how you live, work and heal.</p>
+        <div class="cta-acts"><a class="btn btn-solid" data-wa href="#" target="_blank" rel="noopener">Request a quote <span aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="/contact.html">Contact us <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
   </main>
