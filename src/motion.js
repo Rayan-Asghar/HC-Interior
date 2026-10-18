@@ -22,7 +22,7 @@ export function initMotion() {
   gsap.to(bar, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 0.3 } })
 
   // headings: words rise out of a mask
-  $$('.about h2, .close-copy h2, .p-head h1').forEach((h) => {
+  $$('.about h2, .intro h2, .best h2, .faq h2, .close-copy h2, .p-head h1').forEach((h) => {
     splitWords(h)
     gsap.from($$('.w > span', h), { yPercent: 110, duration: 1.1, stagger: 0.07, ease: OUT, scrollTrigger: { trigger: h, start: 'top 85%' } })
   })

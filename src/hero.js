@@ -10,13 +10,15 @@ import { mountFilm, mountStatic } from './film.js'
 
 const LEAD = 'Stunning places to live, work and heal. Floors, walls, ceilings, kitchens, blinds, facades and healthcare interiors, supplied and fitted.'
 
+const STRIP = [['Studio', 'HC Interior, Islamabad'], ['We supply', 'Floors, walls, ceilings, kitchens'], ['Speciality', 'Homes, offices & hospitals'], ['Collections', 'Eight, from Home Care to Healthcare']]
 const intro = (cls = '') => `
   <div class="hero-copy ${cls}">
     <h1>Design Beyond Ordinary</h1>
     <div class="hero-side">
       <p>${LEAD}</p>
-      <div class="acts"><a class="btn btn-solid" data-wa href="#" target="_blank" rel="noopener">Request a quote</a><a class="btn btn-line" href="#collections">Browse collections</a></div>
+      <div class="acts"><a class="slat-go" href="#collections">View collections <span aria-hidden="true">→</span></a><a class="slat-go" data-wa href="#" target="_blank" rel="noopener">Request a quote <span aria-hidden="true">→</span></a></div>
     </div>
+    <dl class="strip">${STRIP.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
   </div>`
 
 function mountStill(host, fx = '') {

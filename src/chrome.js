@@ -11,7 +11,7 @@ const header = `<header class="top" id="top">
   <button class="enq-btn" id="enqOpen" type="button" aria-controls="enq" aria-expanded="false">Enquiry list <b id="enqCount">0</b></button>
 </header>`
 const footer = `<footer class="foot">
-  <p><b>HC Interior</b> · Design Beyond Ordinary</p>
+  <p class="foot-name">HC Interior</p><p>Design Beyond Ordinary</p>
   <nav aria-label="Footer"><a href="/">Home</a>${NAV.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</nav>
 </footer>`
 const overlays = `<dialog id="qv" aria-labelledby="qvName">
