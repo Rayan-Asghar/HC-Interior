@@ -4,11 +4,11 @@
 
 // PLACEHOLDER: replace with the real WhatsApp number (international format, digits only).
 export const WHATSAPP = '920000000000'
-// Taken from the Build Vantage / Home Care reference PDFs (Murree Road Showroom). Confirm before launch.
+// Supplied by the client.
 export const CONTACT = {
   phone: '+92 3440517572',
   email: 'thehcinterior@gmail.com',
-  address: 'Showroom No. 2, Ground Floor, D-Block, Main Service Road, E-11/4, Islamabad',
+  address: 'Office No. 9, Ground Floor, Crescent Plaza, F-10 Markaz, Islamabad',
 }
 
 export const ACCENT = {
