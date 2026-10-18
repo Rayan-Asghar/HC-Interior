@@ -14,7 +14,7 @@ const footer = `<footer class="foot">
   <div class="foot-cols">
     <div><h3>Sitemap</h3><nav aria-label="Footer"><a href="/">Home</a>${NAV.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</nav></div>
     <div><h3>Visit</h3><p>${CONTACT.address}</p></div>
-    <div><h3>Work with us</h3><p><a href="mailto:${CONTACT.email}">${CONTACT.email}</a></p><p><a href="tel:${CONTACT.phone.replace(/-/g, '')}">${CONTACT.phone}</a></p></div>
+    <div><h3>Work with us</h3><p><a href="mailto:${CONTACT.email}">${CONTACT.email}</a></p><p><a href="tel:${CONTACT.phone.replace(/[^\d+]/g, "")}">${CONTACT.phone}</a></p></div>
   </div>
   <p class="foot-name" aria-hidden="true">HC Interior</p>
   <div class="foot-base"><span>Design Beyond Ordinary</span><span>© ${new Date().getFullYear()} HC Interior</span></div>

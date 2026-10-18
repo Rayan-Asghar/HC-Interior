@@ -6,8 +6,8 @@
 export const WHATSAPP = '920000000000'
 // Taken from the Build Vantage / Home Care reference PDFs (Murree Road Showroom). Confirm before launch.
 export const CONTACT = {
-  phone: '051-6128303',
-  email: 'homecareisb@gmail.com',
+  phone: '+92 3440517572',
+  email: 'thehcinterior@gmail.com',
   address: 'Showroom No. 2, Ground Floor, D-Block, Main Service Road, E-11/4, Islamabad',
 }
 
