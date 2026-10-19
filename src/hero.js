@@ -81,6 +81,7 @@ async function mountSlatWall(host) {
   const probe = document.createElement('canvas')
   if (!(probe.getContext('webgl2') || probe.getContext('webgl'))) return mountStill(host)
   host.innerHTML = `<section class="hero hero-reel hero-slats" aria-label="Who we supply">
+    <img class="slats-poster" src="/img/${SECTORS[0].img}.webp" alt="" fetchpriority="high" decoding="async">
     <canvas class="slats-gl" id="slatsGL" aria-hidden="true"></canvas>
     <div class="reel-shade" aria-hidden="true"></div>
     ${intro('over')}
