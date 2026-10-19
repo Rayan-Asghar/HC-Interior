@@ -724,3 +724,8 @@ img { height: auto; }
 .cta-copy { position: relative; z-index: 2; display: grid; justify-items: start; gap: 36px; color: var(--paper); }
 .cta-copy h2 { font-size: clamp(2.4rem, 5.4vw, 4.8rem); line-height: 1.02; max-width: 14ch; }
 @media (max-width: 600px) { .cta { border-radius: 4px 4px 100px 4px; } }
+
+/* display face: Big Shoulders Display for every headline; Hanken Grotesk stays for body copy and UI */
+:root { --display: 'Big Shoulders Display', 'Arial Narrow', sans-serif; }
+h1, h2, h3, h4, .cs-title, .coll h3, .meta h4, .cs-img figcaption b, .qv-body h3, .enq-head h2, .foot-name { font-family: var(--display); text-transform: uppercase; font-weight: 400; letter-spacing: 0; line-height: 0.95; }
+.hero h1 { font-weight: 300; font-size: clamp(3.6rem, 8vw, 7.5rem); max-width: 14ch; }
