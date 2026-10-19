@@ -729,3 +729,6 @@ img { height: auto; }
 :root { --display: 'Big Shoulders Display', 'Arial Narrow', sans-serif; }
 h1, h2, h3, h4, .cs-title, .coll h3, .meta h4, .cs-img figcaption b, .qv-body h3, .enq-head h2, .foot-name { font-family: var(--display); text-transform: uppercase; font-weight: 400; letter-spacing: 0; line-height: 0.95; }
 .hero h1 { font-weight: 300; font-size: clamp(3.6rem, 8vw, 7.5rem); max-width: 14ch; }
+
+/* what we do best: on stacked layouts the note sits directly above the list, no stretched gap */
+@media (max-width: 900px) { .best-side { justify-content: flex-start; gap: 28px; } }
