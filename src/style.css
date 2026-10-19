@@ -731,4 +731,4 @@ h1, h2, h3, h4, .cs-title, .coll h3, .meta h4, .cs-img figcaption b, .qv-body h3
 .hero h1 { font-weight: 300; font-size: clamp(3.6rem, 8vw, 7.5rem); max-width: 14ch; }
 
 /* what we do best: the note sits directly above the list, no stretched gap */
-.best-side { justify-content: flex-start; gap: 28px; }
+.best-side { justify-content: flex-start; gap: clamp(56px, 8vw, 110px); }
