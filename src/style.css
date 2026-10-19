@@ -626,7 +626,7 @@ h1, h2, h3, h4 { font-family: var(--body); text-transform: none; font-weight: 40
 
 /* what we do best: photo takes ~68%, quieter accordion beside it */
 .best-grid { grid-template-columns: minmax(0, 68fr) minmax(0, 32fr); gap: clamp(28px, 4vw, 64px); align-items: stretch; }
-.best-img { position: relative; aspect-ratio: auto; min-height: clamp(420px, 62vw, 760px); background: var(--ink); }
+.best-img { position: relative; aspect-ratio: auto; min-height: clamp(378px, 55.8vw, 684px); background: var(--ink); }
 .best-img img { position: absolute; inset: 0; opacity: 0; transform: scale(1.05); transition: opacity 0.9s var(--ease), transform 2.2s var(--ease); }
 .best-img img.on { opacity: 1; transform: scale(1); }
 .best-img::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(20, 18, 16, 0.45), transparent 35%); }
