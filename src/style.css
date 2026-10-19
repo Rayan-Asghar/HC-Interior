@@ -717,3 +717,11 @@ img { height: auto; }
   .hero-reel { min-height: 100svh; padding-bottom: 96px; }
 }
 @media (max-width: 900px) { .hero .acts .slat-go { display: inline-block; } }
+
+/* hero: tagline centred in the frame, no paragraph; facts strip is desktop-only */
+.hero-copy.over { display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--head) var(--gutter) 0; height: 100%; }
+.hero-copy.over h1 { max-width: 12ch; margin: 0 auto; }
+@media (max-width: 900px) {
+  .strip { display: none; }
+  .hero .hero-copy.over { height: 100%; padding-bottom: 96px; }
+}

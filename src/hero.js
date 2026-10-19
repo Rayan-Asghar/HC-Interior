@@ -8,16 +8,10 @@ import { mountFilm, mountStatic } from './film.js'
 //   reel  : full-bleed autoplay loop of the room photos with a slat wipe. Has a pause button.
 //   film  : the original scroll-scrubbed canvas film (src/film.js), unchanged except for copy.
 
-const LEAD = 'Stunning places to live, work and heal. Floors, walls, ceilings, kitchens, blinds, facades and healthcare interiors, supplied and fitted.'
-
 const STRIP = [['Showroom', 'Islamabad'], ['We supply', 'Floors, walls & ceilings'], ['Speciality', 'Homes, offices & hospitals'], ['Collections', 'Eight, and 40+ products']]
 const intro = (cls = '') => `
   <div class="hero-copy ${cls}">
     <h1>Design Beyond Ordinary</h1>
-    <div class="hero-side">
-      <p>${LEAD}</p>
-      <div class="acts"><a class="slat-go" href="#collections">View collections</a></div>
-    </div>
     <dl class="strip">${STRIP.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
   </div>`
 
@@ -55,7 +49,6 @@ const FX = {
     const tl = gsap.timeline({ defaults: { ease: 'expo.out' } })
     tl.from('.w > span', { yPercent: 110, duration: 1.2, stagger: 0.09 })
       .from(rule, { scaleX: 0, transformOrigin: 'left', duration: 1.4 }, 0.2)
-      .from('.hero-side > *', { y: 20, opacity: 0, duration: 1, stagger: 0.1 }, 0.5)
       .from('.sector', { clipPath: 'inset(100% 0 0 0)', duration: 1.4, stagger: 0.16 }, 0.3)
       .from('.sector img', { scale: 1.3, duration: 2.2 }, 0.3)
   },
