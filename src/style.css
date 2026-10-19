@@ -725,3 +725,10 @@ img { height: auto; }
   .strip { display: none; }
   .hero .hero-copy.over { height: 100%; padding-bottom: 96px; }
 }
+
+/* closing banner: full-bleed dark photo, headline left, one WhatsApp button, rounded bottom-right corner */
+.cta { min-height: min(86svh, 700px); margin: 0 var(--gutter) var(--gutter); border-radius: 4px 4px 220px 4px; align-items: center; padding: 60px clamp(24px, 6vw, 110px); }
+.cta::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to right, rgba(31, 29, 27, 0.7), rgba(31, 29, 27, 0.15) 70%); }
+.cta-copy { position: relative; z-index: 2; display: grid; justify-items: start; gap: 36px; color: var(--paper); }
+.cta-copy h2 { font-size: clamp(2.4rem, 5.4vw, 4.8rem); line-height: 1.02; max-width: 14ch; }
+@media (max-width: 600px) { .cta { border-radius: 4px 4px 100px 4px; } }
